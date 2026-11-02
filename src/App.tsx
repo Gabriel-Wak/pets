@@ -29,10 +29,10 @@ function Header() {
       <img
         src={LOGO}
         alt="CozyPaws"
-        className="animate-fade-in delay-100 h-[33px] w-[130px] md:h-[52px] md:w-[205px]"
+        className="animate-fade-in delay-100 h-[33px] w-[130px] lg:h-[52px] lg:w-[205px]"
       />
 
-      <nav className="animate-fade-in delay-200 hidden items-center gap-8 text-sm font-medium md:flex">
+      <nav className="animate-fade-in delay-200 hidden items-center gap-5 text-sm font-medium md:flex lg:gap-8">
         {NAV.map((item, i) => (
           <a
             key={item}
@@ -132,7 +132,7 @@ function VideoCard({ className, style }: { className: string; style?: CSSPropert
           >
             <Play size={16} fill="currentColor" />
           </button>
-          <p className="leading-tight font-medium text-white" style={{ fontSize: "clamp(9px, 0.75vw, 12px)" }}>
+          <p className="leading-tight font-medium text-gray-700" style={{ fontSize: "clamp(9px, 0.75vw, 12px)" }}>
             Watch Product Reviews on TikTok and YouTube
           </p>
         </div>
@@ -167,7 +167,7 @@ function BottomImages({ maxHeights, overlays }: { maxHeights?: [string, string, 
   const [left, center, right] = maxHeights ?? [];
   return (
     <div className="flex items-end">
-      <div className="animate-photo-reveal delay-700 relative flex-1">
+      <div className="animate-photo-reveal delay-700 relative min-w-0 flex-1">
         <img src={BOTTOM_LEFT} alt="Dog with toys" className="block h-auto w-full object-contain object-bottom" style={{ maxHeight: left }} />
         {overlays && (
           <div className="animate-scale-in delay-1000 absolute left-[12%] flex items-center gap-3" style={OVERLAY_BOTTOM}>
@@ -179,7 +179,7 @@ function BottomImages({ maxHeights, overlays }: { maxHeights?: [string, string, 
         )}
       </div>
 
-      <div className="animate-photo-reveal delay-600 relative flex-[1.265]">
+      <div className="animate-photo-reveal delay-600 relative min-w-0 flex-[1.265]">
         <img src={BOTTOM_CENTER} alt="Happy pet" className="block h-auto w-full object-contain object-bottom" style={{ maxHeight: center }} />
         {overlays && (
           <div className="animate-scale-in delay-1100 absolute inset-x-0 flex flex-col items-center gap-3 px-4 text-center" style={OVERLAY_BOTTOM}>
@@ -191,7 +191,7 @@ function BottomImages({ maxHeights, overlays }: { maxHeights?: [string, string, 
         )}
       </div>
 
-      <div className="animate-photo-reveal delay-800 relative flex-1">
+      <div className="animate-photo-reveal delay-800 relative min-w-0 flex-1">
         <img src={BOTTOM_RIGHT} alt="Cat relaxing" className="block h-auto w-full object-contain object-bottom" style={{ maxHeight: right }} />
         {overlays && (
           <div className="animate-scale-in delay-1200 absolute right-[12%] flex items-center gap-2" style={OVERLAY_BOTTOM}>
@@ -252,7 +252,7 @@ function MobileHero() {
       </div>
 
       <div className="mt-4 flex gap-3 px-4">
-        <div className="animate-slide-in-left delay-600 flex-1">
+        <div className="animate-slide-in-left delay-600 min-w-0 flex-1">
           <div className="relative aspect-square overflow-hidden rounded-2xl">
             <img src={PRODUCT} alt="Cozy Cat House" className="h-full w-full object-cover" />
             <div className="absolute right-2 bottom-2">
@@ -262,13 +262,13 @@ function MobileHero() {
           <p className="mt-1 text-xs text-gray-700">Cozy Cat House</p>
           <p className="text-sm font-bold text-brand">$49.99</p>
         </div>
-        <div className="animate-slide-in-right delay-700 relative flex-1 overflow-hidden rounded-2xl" style={{ aspectRatio: "3 / 4" }}>
+        <div className="animate-slide-in-right delay-700 relative min-w-0 flex-1 overflow-hidden rounded-2xl" style={{ aspectRatio: "3 / 4" }}>
           <img src={VIDEO} alt="Product review video" className="h-full w-full object-cover" />
           <div className="absolute inset-x-0 bottom-2 flex flex-col items-center gap-1 px-2 text-center">
             <button aria-label="Play video" className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white">
               <Play size={14} fill="currentColor" />
             </button>
-            <p className="text-[9px] leading-tight font-medium text-white">Watch Product Reviews on TikTok and YouTube</p>
+            <p className="text-[9px] leading-tight font-medium text-gray-700">Watch Product Reviews on TikTok and YouTube</p>
           </div>
         </div>
       </div>
